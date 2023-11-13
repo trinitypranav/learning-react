@@ -2,7 +2,10 @@
   "name": "learning-react",
   "version": "1.0.0",
   "description": "A new react app without CRA",
-  "scripts": {},
+  "scripts": {
+    "start":"parcel index.html",
+    "build":"parcel build index.html"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
