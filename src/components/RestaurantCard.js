@@ -1,7 +1,7 @@
 import { cloudinaryImageURL } from "../utils/config";
 
 const RestaurantCard = (props) => {
-  console.log(props.info);
+  // console.log(props.info);
   let { name, areaName, cuisines, cloudinaryImageId, avgRating } = props.info;
   return (
     <div className="card">

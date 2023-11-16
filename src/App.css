@@ -9,6 +9,15 @@
   border: 1px solid black;
 }
 
+.body {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.footer {
+  border: 1px solid black;
+}
+
 .appLogo {
   width: 10rem;
   border: 1px solid black;
@@ -32,7 +41,6 @@
 .restaurantsContainer {
   display: flex;
   flex-wrap: wrap;
-  padding: 10px;
 }
 
 .card {
@@ -51,4 +59,8 @@
   width: 100%;
   height: 200px;
   border-radius: 20px;
+}
+
+.searchFeature > * {
+  margin: 0px 10px;
 }
