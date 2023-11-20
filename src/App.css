@@ -1,37 +1,56 @@
 * {
-  box-sizing: border-box;
+  box-sizing: content-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a:link,
+:visited,
+:active {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   padding: 5px;
-  border: 1px solid black;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.08);
+  /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); */
 }
 
 .body {
-  border: 1px solid black;
   padding: 10px;
 }
 
-.footer {
-  border: 1px solid black;
+.body > * {
+  margin: 20px 0;
+}
+
+.footerContainer {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .appLogo {
   width: 10rem;
-  border: 1px solid black;
 }
 
 .navList {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   list-style-type: none;
   align-items: center;
-  border: 1px solid black;
 }
 
-.navList > li {
+.navList > * {
   margin: 10px;
   font-size: larger;
   font-weight: bolder;
@@ -41,26 +60,84 @@
 .restaurantsContainer {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
-.card {
+.restaurant-card {
   margin: 10px;
-  width: 250px;
-  border: solid 1px black;
+  width: 280px;
   padding: 10px;
-  border-radius: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
 }
 
-.card > * {
+.restaurant-card:hover {
+  transform: scale(0.95);
+}
+
+.restaurant-card > * {
   margin: 5px 0px;
 }
 
 .cardImage {
   width: 100%;
   height: 200px;
-  border-radius: 20px;
+  border-radius: 5px;
+}
+
+.featuresContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.searchFeature {
+  margin: 0 50px;
 }
 
 .searchFeature > * {
-  margin: 0px 10px;
+  padding: 10px;
+}
+
+.filterFeature {
+  margin: 0 30px;
+}
+
+.filterFeature > * {
+  padding: 10px;
+  margin: 0 20px;
+}
+
+.shimmer-card {
+  width: 280px;
+  height: 300px;
+  background-color: rgb(248, 245, 245);
+  margin: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.restaurantInfo {
+  margin: 10px;
+}
+.restaurantInfo > * {
+  margin: 10px;
+}
+.restaurantImage {
+  width: 400px;
+  border-radius: 20px;
+}
+
+.restaurantMenu {
+  margin: 20px;
+}
+
+.restaurantMenu > * {
+  margin: 20px;
+}
+
+.restaurantDetailsContainer {
+  display: flex;
+  justify-content: space-evenly;
 }
