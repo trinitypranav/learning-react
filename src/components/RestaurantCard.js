@@ -1,7 +1,7 @@
 import { cloudinaryImageURL } from "../utils/config";
 
 const RestaurantCard = (props) => {
-  console.log(props.info);
+  // console.log(props.info);
   let {
     name,
     areaName,
@@ -34,7 +34,7 @@ const RestaurantCard = (props) => {
             marginLeft: "10px",
           }}
         >
-          {"(" + sla.lastMileTravelString + ")"}
+          {sla.lastMileTravelString && "(" + sla.lastMileTravelString + ")"}
         </span>
       </h3>
       <div>{totalRatingsString} reviews</div>

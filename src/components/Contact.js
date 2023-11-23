@@ -7,7 +7,8 @@ const Contact = () => {
         Contact Me <span style={{ fontSize: "80px" }}>&#128236;</span>
       </h2>
       <p style={styles.description}>
-        We'd love to hear from you! Feel free to reach out using the form below.
+        I'd love to hear from you! <br />
+        Feel free to reach out using the form below.
       </p>
       <form style={styles.form}>
         <label htmlFor="name" style={styles.label}>

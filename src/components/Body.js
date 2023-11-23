@@ -1,5 +1,5 @@
 import RestaurantCard from "./RestaurantCard";
-import allRests from "../utils/allRests.json";
+import allDummyRestaurants from "../utils/allDummyRestaurants.json";
 import { useEffect, useState } from "react";
 import { getAllRestaurantsURL } from "../utils/config";
 import Shimmer from "./Shimmer";
@@ -19,13 +19,24 @@ const Body = () => {
     try {
       let data = await fetch(getAllRestaurantsURL);
       let jsonData = await data.json();
-      // console.log(jsonData);
+      // console.log(
+      //   jsonData?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle
+      //     ?.restaurants
+      // );
+      if (
+        jsonData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants == undefined
+      ) {
+        setAllRestaurants(allDummyRestaurants);
+        setFilteredRestaurants(allDummyRestaurants);
+        return;
+      }
       setAllRestaurants(
-        jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        jsonData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       );
       setFilteredRestaurants(
-        jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        jsonData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       );
     } catch (e) {
@@ -65,8 +76,8 @@ const Body = () => {
           >
             Search
           </button>
+          <span> {filteredRestaurants.length} Restaurant(s) </span>
         </div>
-
         <div className="filterFeature">
           <button
             onClick={() => {
