@@ -1,15 +1,19 @@
 {
   "name": "learning-react",
+  "homepage": "https://trinitypranav.github.io/learning-react",
   "version": "1.0.0",
   "description": "A new react app without CRA",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "gh-pages": "^6.1.0",
     "parcel": "^2.10.2",
     "postcss": "^8.4.32",
     "process": "^0.11.10",
