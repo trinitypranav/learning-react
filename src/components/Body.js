@@ -46,9 +46,10 @@ const Body = () => {
 
   return (
     <div className="body">
-      <div className="featuresContainer">
-        <div className="searchFeature">
+      <div className="featuresContainer flex flex-wrap flex-col sm:flex-row justify-between p-2 m-2">
+        <div className="searchFeature p-1 text-lg">
           <input
+            className="hover:bg-orange-50 focus:outline-none focus:bg-orange-50 shadow-md border p-2 rounded-lg"
             type="text"
             value={searchText}
             onChange={(e) => {
@@ -61,6 +62,7 @@ const Body = () => {
           />
 
           <button
+            className="ml-2 hover:bg-orange-50 shadow-md py-2 px-5 rounded-lg"
             onClick={() => {
               if (searchText.length == 0) {
                 setFilteredRestaurants(allRestaurants);
@@ -76,10 +78,15 @@ const Body = () => {
           >
             Search
           </button>
-          <span> {filteredRestaurants.length} Restaurant(s) </span>
+          <span className="ml-5 text-base italic">
+            {" "}
+            {filteredRestaurants.length} Restaurant(s){" "}
+          </span>
         </div>
-        <div className="filterFeature">
+
+        <div className="filterFeature flex flex-wrap p-2 justify-between">
           <button
+            className="px-3 py-1 hover:bg-orange-50 m-2 rounded-lg shadow-md"
             onClick={() => {
               if (isFilterOn) {
                 setIsFilterOn(false);
@@ -96,6 +103,7 @@ const Body = () => {
             Filter 4+ Rating
           </button>
           <button
+            className="px-3 py-1 hover:bg-orange-50 m-2 rounded-lg shadow-md"
             onClick={() => {
               if (isFilterOn) {
                 setIsFilterOn(false);
@@ -113,6 +121,7 @@ const Body = () => {
             10K+ Reviews
           </button>
           <button
+            className="px-3 py-1 hover:bg-orange-50 m-2 rounded-lg shadow-md"
             onClick={() => {
               if (isFilterOn) {
                 setIsFilterOn(false);
@@ -131,7 +140,7 @@ const Body = () => {
         </div>
       </div>
 
-      <div className="restaurantsContainer">
+      <div className="restaurantsContainer flex flex-wrap justify-center px-5">
         {filteredRestaurants?.length === 0 ? (
           <Shimmer />
         ) : (

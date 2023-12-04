@@ -11,12 +11,13 @@ import Error from "./components/Error";
 import RestaurantDetails from "./components/RestaurantDetails";
 
 const App = () => {
+  //className="box-content m-0 p-0 font"
   return (
-    <>
+    <React.Fragment className="box-content m-0 p-0 font">
       <Header />
       <Outlet />
       <Footer />
-    </>
+    </React.Fragment>
   );
 };
 
