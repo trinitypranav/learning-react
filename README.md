@@ -11,3 +11,18 @@
 // - Cuisines
 // - Rating
 // footer
+
+Parcel
+
+- Dev Build
+- Local server
+- HMR - Hot Module Replacement
+- File Watching Algorithm
+- Caching for faster builds
+- Image Optimization
+- Minification
+- Bundling
+- Compress
+- Code Splitting/ Lazy Loading/ Chunking/ On Demand loading
+- Tree Shaking
+- Diff Dev and Prod Builds
