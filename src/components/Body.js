@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { getAllRestaurantsURL } from "../utils/config";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import OfflinePage from "./OfflinePage";
+import useOnlineStatus from "../utils/customHooks/useOnlineStatus";
 
 const Body = () => {
   const [searchText, setSearchText] = useState("");
@@ -44,7 +46,7 @@ const Body = () => {
     }
   }
 
-  return (
+  return !useOnlineStatus() ? <OfflinePage /> : (
     <div className="body">
       <div className="featuresContainer flex flex-wrap flex-col sm:flex-row justify-between p-2 m-2">
         <div className="searchFeature p-1 text-lg">
