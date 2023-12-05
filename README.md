@@ -26,3 +26,5 @@ Parcel
 - Code Splitting/ Lazy Loading/ Chunking/ On Demand loading
 - Tree Shaking
 - Diff Dev and Prod Builds
+
+Bundle Chunking/ Lazy loading/ Code Splitting/ On Demand Loading
