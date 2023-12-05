@@ -2954,14 +2954,19 @@ var _body = require("./components/Body");
 var _bodyDefault = parcelHelpers.interopDefault(_body);
 var _footer = require("./components/Footer");
 var _footerDefault = parcelHelpers.interopDefault(_footer);
-var _about = require("./components/About");
-var _aboutDefault = parcelHelpers.interopDefault(_about);
-var _contact = require("./components/Contact");
-var _contactDefault = parcelHelpers.interopDefault(_contact);
 var _error = require("./components/Error");
 var _errorDefault = parcelHelpers.interopDefault(_error);
 var _restaurantDetails = require("./components/RestaurantDetails");
 var _restaurantDetailsDefault = parcelHelpers.interopDefault(_restaurantDetails);
+var _shimmer = require("./components/Shimmer");
+var _shimmerDefault = parcelHelpers.interopDefault(_shimmer);
+// import About from "./components/About";
+// import Contact from "./components/Contact";
+// Lazy Loading, Code Splitting, Chunking of About and Contact
+const About = /*#__PURE__*/ (0, _react.lazy)(()=>require("e9c452bf08808b49"));
+_c = About;
+const Contact = /*#__PURE__*/ (0, _react.lazy)(()=>require("5e1a65b7e57df9f9"));
+_c1 = Contact;
 const App = ()=>{
     //className="box-content m-0 p-0 font"
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactDefault.default).Fragment, {
@@ -2969,38 +2974,38 @@ const App = ()=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 17,
+                lineNumber: 22,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 18,
+                lineNumber: 23,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerDefault.default), {}, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 19,
+                lineNumber: 24,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/App.js",
-        lineNumber: 16,
+        lineNumber: 21,
         columnNumber: 5
     }, undefined);
 };
-_c = App;
+_c2 = App;
 const appRouter = (0, _reactRouterDom.createBrowserRouter)([
     {
         path: "/",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 27,
+            lineNumber: 32,
             columnNumber: 14
         }, undefined),
         errorElement: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 28,
+            lineNumber: 33,
             columnNumber: 19
         }, undefined),
         children: [
@@ -3008,31 +3013,45 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 32,
+                    lineNumber: 37,
                     columnNumber: 18
                 }, undefined)
             },
             {
                 path: "/about",
-                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _aboutDefault.default), {}, void 0, false, {
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react.Suspense), {
+                    fallback: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, void 0, void 0),
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(About, {}, void 0, false, {
+                        fileName: "src/App.js",
+                        lineNumber: 43,
+                        columnNumber: 13
+                    }, undefined)
+                }, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 36,
-                    columnNumber: 18
+                    lineNumber: 42,
+                    columnNumber: 11
                 }, undefined)
             },
             {
                 path: "/contact",
-                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contactDefault.default), {}, void 0, false, {
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react.Suspense), {
+                    fallback: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, void 0, void 0),
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Contact, {}, void 0, false, {
+                        fileName: "src/App.js",
+                        lineNumber: 51,
+                        columnNumber: 13
+                    }, undefined)
+                }, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 40,
-                    columnNumber: 18
+                    lineNumber: 50,
+                    columnNumber: 11
                 }, undefined)
             },
             {
                 path: "/restaurant/:id",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantDetailsDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 44,
+                    lineNumber: 57,
                     columnNumber: 18
                 }, undefined)
             }
@@ -3045,18 +3064,20 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.RouterP
     router: appRouter
 }, void 0, false, {
     fileName: "src/App.js",
-    lineNumber: 52,
+    lineNumber: 65,
     columnNumber: 13
 }, undefined));
-var _c;
-$RefreshReg$(_c, "App");
+var _c, _c1, _c2;
+$RefreshReg$(_c, "About");
+$RefreshReg$(_c1, "Contact");
+$RefreshReg$(_c2, "App");
 
   $parcel$ReactRefreshHelpers$f00f.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","react-router-dom":"9xmpe","./components/Header":"hsJbF","./components/Body":"8yaV8","./components/Footer":"8pPOA","./components/About":"9R1Eu","./components/Contact":"cgAOG","./components/Error":"kvula","./components/RestaurantDetails":"95Td6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","react-router-dom":"9xmpe","./components/Header":"hsJbF","./components/Body":"8yaV8","./components/Footer":"8pPOA","./components/Error":"kvula","./components/RestaurantDetails":"95Td6","./components/Shimmer":"g6ZGj","e9c452bf08808b49":"6jcNq","5e1a65b7e57df9f9":"5TZGn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -34533,308 +34554,7 @@ module.exports = require("f17a2bf4043d20e8").getBundleURL("aXMci") + "linkedin.3
 },{"f17a2bf4043d20e8":"lgJ39"}],"lLKBV":[function(require,module,exports) {
 module.exports = require("e69ca58cd03864d8").getBundleURL("aXMci") + "github.670dd962.png" + "?" + Date.now();
 
-},{"e69ca58cd03864d8":"lgJ39"}],"9R1Eu":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$5b98 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$5b98.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _reactRouterDom = require("react-router-dom");
-const About = ()=>{
-    const containerStyle = {
-        maxWidth: "600px",
-        margin: "50px auto",
-        padding: "20px",
-        textAlign: "center",
-        boxShadow: "0 10px 20px rgba(0, 0, 0, 0.3)",
-        borderRadius: "8px",
-        backgroundColor: "rgb(248, 245, 245)"
-    };
-    const headingStyle = {
-        color: "#333",
-        fontSize: "2rem"
-    };
-    const paragraphStyle = {
-        color: "#666",
-        fontSize: "1.2rem",
-        lineHeight: "1.6",
-        marginBottom: "50px"
-    };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "about-us",
-        style: containerStyle,
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                style: headingStyle,
-                children: "About Me"
-            }, void 0, false, {
-                fileName: "src/components/About.js",
-                lineNumber: 30,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                style: paragraphStyle,
-                children: [
-                    "Hey ",
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        style: {
-                            fontSize: "50px"
-                        },
-                        children: "\uD83D\uDC4B"
-                    }, void 0, false, {
-                        fileName: "src/components/About.js",
-                        lineNumber: 32,
-                        columnNumber: 13
-                    }, undefined),
-                    ", Welcome to Eat Villa project! This is just an attempt to make a clone of food delivery apps like Swiggy and Zomato. It was developed using ReactJS."
-                ]
-            }, void 0, true, {
-                fileName: "src/components/About.js",
-                lineNumber: 31,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                style: paragraphStyle,
-                children: [
-                    "Thank you for checking this website. Please let me know if you have any suggestions. you can contact me using ",
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                        to: "/contact",
-                        children: " here"
-                    }, void 0, false, {
-                        fileName: "src/components/About.js",
-                        lineNumber: 38,
-                        columnNumber: 47
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/About.js",
-                lineNumber: 36,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/components/About.js",
-        lineNumber: 29,
-        columnNumber: 5
-    }, undefined);
-};
-_c = About;
-exports.default = About;
-var _c;
-$RefreshReg$(_c, "About");
-
-  $parcel$ReactRefreshHelpers$5b98.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cgAOG":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$ee46 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$ee46.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-const Contact = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        style: styles.container,
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                style: styles.heading,
-                children: [
-                    "Contact Me ",
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        style: {
-                            fontSize: "80px"
-                        },
-                        children: "\uD83D\uDCEC"
-                    }, void 0, false, {
-                        fileName: "src/components/Contact.js",
-                        lineNumber: 7,
-                        columnNumber: 20
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/Contact.js",
-                lineNumber: 6,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                style: styles.description,
-                children: [
-                    "I'd love to hear from you! ",
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                        fileName: "src/components/Contact.js",
-                        lineNumber: 10,
-                        columnNumber: 36
-                    }, undefined),
-                    "Feel free to reach out using the form below."
-                ]
-            }, void 0, true, {
-                fileName: "src/components/Contact.js",
-                lineNumber: 9,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
-                style: styles.form,
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                        htmlFor: "name",
-                        style: styles.label,
-                        children: "Name"
-                    }, void 0, false, {
-                        fileName: "src/components/Contact.js",
-                        lineNumber: 14,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                        type: "text",
-                        id: "name",
-                        name: "name",
-                        style: styles.input
-                    }, void 0, false, {
-                        fileName: "src/components/Contact.js",
-                        lineNumber: 17,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                        htmlFor: "email",
-                        style: styles.label,
-                        children: "Email"
-                    }, void 0, false, {
-                        fileName: "src/components/Contact.js",
-                        lineNumber: 19,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                        type: "email",
-                        id: "email",
-                        name: "email",
-                        style: styles.input
-                    }, void 0, false, {
-                        fileName: "src/components/Contact.js",
-                        lineNumber: 22,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                        htmlFor: "message",
-                        style: styles.label,
-                        children: "Message"
-                    }, void 0, false, {
-                        fileName: "src/components/Contact.js",
-                        lineNumber: 24,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("textarea", {
-                        id: "message",
-                        name: "message",
-                        rows: "4",
-                        style: styles.textarea
-                    }, void 0, false, {
-                        fileName: "src/components/Contact.js",
-                        lineNumber: 27,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        type: "submit",
-                        style: styles.submitButton,
-                        onClick: ()=>{
-                            alert("Thank you for your feedback!");
-                        },
-                        children: "Send Message"
-                    }, void 0, false, {
-                        fileName: "src/components/Contact.js",
-                        lineNumber: 34,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/Contact.js",
-                lineNumber: 13,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/components/Contact.js",
-        lineNumber: 5,
-        columnNumber: 5
-    }, undefined);
-};
-_c = Contact;
-const styles = {
-    container: {
-        maxWidth: "600px",
-        margin: "0 auto",
-        padding: "20px",
-        textAlign: "center"
-    },
-    heading: {
-        fontSize: "2em",
-        marginBottom: "20px"
-    },
-    description: {
-        fontSize: "1.2em",
-        marginBottom: "30px"
-    },
-    form: {
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center"
-    },
-    label: {
-        fontSize: "1em",
-        marginBottom: "5px",
-        textAlign: "left",
-        width: "100%"
-    },
-    input: {
-        width: "100%",
-        padding: "10px",
-        marginBottom: "15px",
-        border: "1px solid #ccc",
-        borderRadius: "5px",
-        boxSizing: "border-box"
-    },
-    textarea: {
-        width: "100%",
-        padding: "10px",
-        marginBottom: "15px",
-        border: "1px solid #ccc",
-        borderRadius: "5px",
-        boxSizing: "border-box",
-        resize: "vertical"
-    },
-    submitButton: {
-        backgroundColor: "#4CAF50",
-        color: "white",
-        padding: "15px 20px",
-        border: "none",
-        borderRadius: "5px",
-        cursor: "pointer",
-        fontSize: "1em"
-    }
-};
-exports.default = Contact;
-var _c;
-$RefreshReg$(_c, "Contact");
-
-  $parcel$ReactRefreshHelpers$ee46.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kvula":[function(require,module,exports) {
+},{"e69ca58cd03864d8":"lgJ39"}],"kvula":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$0ba4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -35147,6 +34867,80 @@ exports.default = useRestaurantDetails;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["bgABq","1xC6H","2kQhy"], "2kQhy", "parcelRequire5342")
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6jcNq":[function(require,module,exports) {
+module.exports = require("8277cd54fe2f6c03")(require("42ddae464752f086").getBundleURL("aXMci") + "About.84db8bad.js" + "?" + Date.now()).catch((err)=>{
+    delete module.bundle.cache[module.id];
+    throw err;
+}).then(()=>module.bundle.root("9R1Eu"));
+
+},{"8277cd54fe2f6c03":"61B45","42ddae464752f086":"lgJ39"}],"61B45":[function(require,module,exports) {
+"use strict";
+var cacheLoader = require("ca2a84f7fa4a3bb0");
+module.exports = cacheLoader(function(bundle) {
+    return new Promise(function(resolve, reject) {
+        // Don't insert the same script twice (e.g. if it was already in the HTML)
+        var existingScripts = document.getElementsByTagName("script");
+        if ([].concat(existingScripts).some(function isCurrentBundle(script) {
+            return script.src === bundle;
+        })) {
+            resolve();
+            return;
+        }
+        var preloadLink = document.createElement("link");
+        preloadLink.href = bundle;
+        preloadLink.rel = "preload";
+        preloadLink.as = "script";
+        document.head.appendChild(preloadLink);
+        var script = document.createElement("script");
+        script.async = true;
+        script.type = "text/javascript";
+        script.src = bundle;
+        script.onerror = function(e) {
+            var error = new TypeError("Failed to fetch dynamically imported module: ".concat(bundle, ". Error: ").concat(e.message));
+            script.onerror = script.onload = null;
+            script.remove();
+            reject(error);
+        };
+        script.onload = function() {
+            script.onerror = script.onload = null;
+            resolve();
+        };
+        document.getElementsByTagName("head")[0].appendChild(script);
+    });
+});
+
+},{"ca2a84f7fa4a3bb0":"j49pS"}],"j49pS":[function(require,module,exports) {
+"use strict";
+var cachedBundles = {};
+var cachedPreloads = {};
+var cachedPrefetches = {};
+function getCache(type) {
+    switch(type){
+        case "preload":
+            return cachedPreloads;
+        case "prefetch":
+            return cachedPrefetches;
+        default:
+            return cachedBundles;
+    }
+}
+module.exports = function(loader, type) {
+    return function(bundle) {
+        var cache = getCache(type);
+        if (cache[bundle]) return cache[bundle];
+        return cache[bundle] = loader.apply(null, arguments).catch(function(e) {
+            delete cache[bundle];
+            throw e;
+        });
+    };
+};
+
+},{}],"5TZGn":[function(require,module,exports) {
+module.exports = require("1d7cbb87e72a4f84")(require("560c4fdb29cce04a").getBundleURL("aXMci") + "Contact.78c3f0c5.js" + "?" + Date.now()).catch((err)=>{
+    delete module.bundle.cache[module.id];
+    throw err;
+}).then(()=>module.bundle.root("cgAOG"));
+
+},{"1d7cbb87e72a4f84":"61B45","560c4fdb29cce04a":"lgJ39"}]},["bgABq","1xC6H","2kQhy"], "2kQhy", "parcelRequire5342")
 
 //# sourceMappingURL=index.7271efb6.js.map
