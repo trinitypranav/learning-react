@@ -2963,7 +2963,7 @@ var _shimmerDefault = parcelHelpers.interopDefault(_shimmer);
 // import About from "./components/About";
 // import Contact from "./components/Contact";
 // Lazy Loading, Code Splitting, Chunking of About and Contact
-const About = /*#__PURE__*/ (0, _react.lazy)(()=>require("e9c452bf08808b49"));
+const About = /*#__PURE__*/ (0, _react.lazy)(()=>require("e9c452bf08808b49")); // returning import() is important here
 _c = About;
 const Contact = /*#__PURE__*/ (0, _react.lazy)(()=>require("5e1a65b7e57df9f9"));
 _c1 = Contact;
@@ -3000,21 +3000,21 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 32,
-            columnNumber: 14
+            lineNumber: 33,
+            columnNumber: 16
         }, undefined),
         errorElement: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 33,
-            columnNumber: 19
+            lineNumber: 34,
+            columnNumber: 21
         }, undefined),
         children: [
             {
                 path: "/",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 37,
-                    columnNumber: 18
+                    lineNumber: 38,
+                    columnNumber: 20
                 }, undefined)
             },
             {
@@ -3023,13 +3023,13 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                     fallback: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, void 0, void 0),
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(About, {}, void 0, false, {
                         fileName: "src/App.js",
-                        lineNumber: 43,
-                        columnNumber: 13
+                        lineNumber: 44,
+                        columnNumber: 15
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 42,
-                    columnNumber: 11
+                    lineNumber: 43,
+                    columnNumber: 13
                 }, undefined)
             },
             {
@@ -3038,33 +3038,35 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                     fallback: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, void 0, void 0),
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Contact, {}, void 0, false, {
                         fileName: "src/App.js",
-                        lineNumber: 51,
-                        columnNumber: 13
+                        lineNumber: 52,
+                        columnNumber: 15
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 50,
-                    columnNumber: 11
+                    lineNumber: 51,
+                    columnNumber: 13
                 }, undefined)
             },
             {
                 path: "/restaurant/:id",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantDetailsDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 57,
-                    columnNumber: 18
+                    lineNumber: 58,
+                    columnNumber: 20
                 }, undefined)
             }
         ]
     }
-]);
+], {
+    basename: "/learning-react"
+});
 const container = document.getElementById("root");
 const root = (0, _client.createRoot)(container);
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.RouterProvider), {
     router: appRouter
 }, void 0, false, {
     fileName: "src/App.js",
-    lineNumber: 65,
+    lineNumber: 68,
     columnNumber: 13
 }, undefined));
 var _c, _c1, _c2;
