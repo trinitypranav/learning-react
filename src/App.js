@@ -26,39 +26,42 @@ const App = () => {
   );
 };
 
-const appRouter = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    errorElement: <Error />,
-    children: [
-      {
-        path: "/",
-        element: <Body />,
-      },
-      {
-        path: "/about",
-        element: (
-          <Suspense fallback={<Shimmer />}>
-            <About />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/contact",
-        element: (
-          <Suspense fallback={<Shimmer />}>
-            <Contact />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/restaurant/:id",
-        element: <RestaurantDetails />,
-      },
-    ],
-  },
-]);
+const appRouter = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <App />,
+      errorElement: <Error />,
+      children: [
+        {
+          path: "/",
+          element: <Body />,
+        },
+        {
+          path: "/about",
+          element: (
+            <Suspense fallback={<Shimmer />}>
+              <About />
+            </Suspense>
+          ),
+        },
+        {
+          path: "/contact",
+          element: (
+            <Suspense fallback={<Shimmer />}>
+              <Contact />
+            </Suspense>
+          ),
+        },
+        {
+          path: "/restaurant/:id",
+          element: <RestaurantDetails />,
+        },
+      ],
+    },
+  ],
+  { basename: "/learning-react" }
+);
 
 const container = document.getElementById("root");
 const root = createRoot(container);
