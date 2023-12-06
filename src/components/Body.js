@@ -46,7 +46,9 @@ const Body = () => {
     }
   }
 
-  return !useOnlineStatus() ? <OfflinePage /> : (
+  return !useOnlineStatus() ? (
+    <OfflinePage />
+  ) : (
     <div className="body">
       <div className="featuresContainer flex flex-wrap flex-col sm:flex-row justify-between p-2 m-2">
         <div className="searchFeature p-1 text-lg">

@@ -18,50 +18,47 @@ const Contact = lazy(() => import("./components/Contact"));
 const App = () => {
   //className="box-content m-0 p-0 font"
   return (
-    <React.Fragment className="box-content m-0 p-0 font">
+    <div className="box-content m-0 p-0 font">
       <Header />
       <Outlet />
       <Footer />
-    </React.Fragment>
+    </div>
   );
 };
 
-const appRouter = createBrowserRouter(
-  [
-    {
-      path: "/",
-      element: <App />,
-      errorElement: <Error />,
-      children: [
-        {
-          path: "/",
-          element: <Body />,
-        },
-        {
-          path: "/about",
-          element: (
-            <Suspense fallback={<Shimmer />}>
-              <About />
-            </Suspense>
-          ),
-        },
-        {
-          path: "/contact",
-          element: (
-            <Suspense fallback={<Shimmer />}>
-              <Contact />
-            </Suspense>
-          ),
-        },
-        {
-          path: "/restaurant/:id",
-          element: <RestaurantDetails />,
-        },
-      ],
-    },
-  ],
-  { basename: "/learning-react" }
-);
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    errorElement: <Error />,
+    children: [
+      {
+        path: "/",
+        element: <Body />,
+      },
+      {
+        path: "/about",
+        element: (
+          <Suspense fallback={<Shimmer />}>
+            <About />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/contact",
+        element: (
+          <Suspense fallback={<Shimmer />}>
+            <Contact />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/restaurant/:id",
+        element: <RestaurantDetails />,
+      },
+    ],
+  },
+]);
 
 const container = document.getElementById("root");
 const root = createRoot(container);

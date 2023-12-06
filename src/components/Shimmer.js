@@ -2,7 +2,7 @@ import React from "react";
 
 const Shimmer = () => {
   return (
-    <React.Fragment className="flex m-2">
+    <div className="flex flex-wrap">
       {Array(10)
         .fill(0)
         .map((_, index) => (
@@ -15,7 +15,7 @@ const Shimmer = () => {
             <h2 className="bg-orange-50 w-2/3 h-8 rounded-lg mb-4"></h2>
           </div>
         ))}
-    </React.Fragment>
+    </div>
   );
 };
 
