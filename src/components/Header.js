@@ -2,20 +2,20 @@ import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/customHooks/useOnlineStatus";
 import appLogo from "../assets/appLogo.png";
-import scooter from "../assets/scooter.png";
+// import scooter from "../assets/scooter.png";
 
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const scooterRef = useRef(null);
+  // const scooterRef = useRef(null);
 
-  useEffect(() => {
-    setTimeout(() => {
-      scooterRef.current.style.transform = "translateX(1000px)";
-      scooterRef.current.style.transition = "transform 4s ease-in-out";
-      scooterRef.current.src = scooter;
-    }, 1000);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     scooterRef.current.style.transform = "translateX(1000px)";
+  //     scooterRef.current.style.transition = "transform 4s ease-in-out";
+  //     scooterRef.current.src = scooter;
+  //   }, 1000);
+  // }, []);
 
   function toggle() {
     isLoggedIn ? setIsLoggedIn(false) : setIsLoggedIn(true);
@@ -23,13 +23,13 @@ const Header = () => {
   return (
     <div className="flex flex-col sm:flex-row justify-between p-2 shadow-md">
       <img className="w-56" src={appLogo} alt="Eat Villa App Logo"></img>
-      <img
+      {/* <img
         id="scooter"
         className="w-20"
         ref={scooterRef}
         src={scooter}
         alt="scooter"
-      ></img>
+      ></img> */}
       <ul className="flex flex-wrap items-center">
         <li className="p-5 text-lg">
           Online Status: {useOnlineStatus() ? "🟢" : "🔴"}

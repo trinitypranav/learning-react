@@ -60,7 +60,7 @@ const appRouter = createBrowserRouter(
       ],
     },
   ],
-  { basename: "https://trinitypranav.github.io/learning-react" }
+  { basename: "/learning-react" }
 );
 
 const container = document.getElementById("root");
