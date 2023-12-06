@@ -5,7 +5,7 @@
   "description": "A new react app without CRA",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html --public-url https://trinitypranav.github.io/learning-react",
+    "build": "parcel build index.html",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
