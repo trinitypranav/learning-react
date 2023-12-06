@@ -2970,7 +2970,7 @@ _c1 = Contact;
 const App = ()=>{
     //className="box-content m-0 p-0 font"
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "box-content m-0 p-0 font",
+        className: "box-content m-0 p-0",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
                 fileName: "src/App.js",
@@ -3057,7 +3057,9 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
             }
         ]
     }
-]);
+], {
+    basename: "/learning-react"
+});
 const container = document.getElementById("root");
 const root = (0, _client.createRoot)(container);
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.RouterProvider), {
