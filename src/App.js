@@ -18,7 +18,7 @@ const Contact = lazy(() => import("./components/Contact"));
 const App = () => {
   //className="box-content m-0 p-0 font"
   return (
-    <div className="box-content m-0 p-0 font">
+    <div className="box-content m-0 p-0">
       <Header />
       <Outlet />
       <Footer />
@@ -59,8 +59,8 @@ const appRouter = createBrowserRouter(
         },
       ],
     },
-  ]
-  // { basename: "/learning-react" }
+  ],
+  { basename: "/learning-react" }
 );
 
 const container = document.getElementById("root");
