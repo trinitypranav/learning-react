@@ -1,7 +1,7 @@
 {
   "name": "learning-react",
   "homepage": "https://trinitypranav.github.io/learning-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A new react app without CRA",
   "scripts": {
     "start": "parcel index.html",
