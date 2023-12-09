@@ -2,10 +2,12 @@ import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/customHooks/useOnlineStatus";
 import appLogo from "../assets/appLogo.png";
+import { useSelector } from "react-redux";
 // import scooter from "../assets/scooter.png";
 
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  let cartCount = useSelector((state) => state.cart.items.length);
 
   // const scooterRef = useRef(null);
 
@@ -44,7 +46,9 @@ const Header = () => {
           <Link to={"/contact"}>Contact</Link>
         </li>
         <li className="px-3 py-1 mx-2 shadow-md text-lg hover:bg-orange-50 rounded-lg ">
-          Cart
+          <Link to={"/cart"}>
+            Cart <span className="text-orange-400">{cartCount}</span>
+          </Link>
         </li>
         {isLoggedIn ? (
           <button

@@ -2,9 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { cloudinaryImageURL } from "../utils/config";
 import useRestaurantDetails from "../utils/customHooks/useRestaurantDetails";
+import { useDispatch } from "react-redux";
+import { addItem } from "../cartSlice";
 
 const RestaurantDetails = () => {
   let { id } = useParams();
+  const dispatch = useDispatch();
 
   let restaurantDetails = {};
   let restaurantMenu = [];
@@ -13,7 +16,7 @@ const RestaurantDetails = () => {
   restaurantMenu =
     json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards?.map(
       (item) => {
-        return item.card.info.name;
+        return item.card.info;
       }
     );
 
@@ -44,11 +47,22 @@ const RestaurantDetails = () => {
         </span>{" "}
         <br />
       </div>
+      {/* Menu */}
       <div className="restaurantMenu ml-5">
         <h1 className="text-xl font-bold my-5">Menu</h1>
         <ul className="list-disc">
           {restaurantMenu?.map((item, index) => (
-            <li key={index}>{item}</li>
+            <li key={index}>
+              {item.name}{" "}
+              <button
+                className="bg-green-300 text-xs p-2 m-1 rounded-lg"
+                onClick={() => {
+                  dispatch(addItem(item));
+                }}
+              >
+                Add To Cart
+              </button>
+            </li>
           ))}
         </ul>
       </div>
