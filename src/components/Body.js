@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { addOpenLabel } from "./RestaurantCard";
 import allDummyRestaurants from "../utils/allDummyRestaurants.json";
 import { useEffect, useState } from "react";
 import { getAllRestaurantsURL } from "../utils/config";
@@ -12,6 +12,7 @@ const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [isFilterOn, setIsFilterOn] = useState(false);
+  const RestaurantCardOpen = addOpenLabel(RestaurantCard);
 
   useEffect(() => {
     getAllRestaurants();
@@ -154,7 +155,11 @@ const Body = () => {
                 to={"/restaurant/" + restaurant.info.id}
                 key={restaurant.info.id}
               >
-                <RestaurantCard {...restaurant} />
+                {restaurant.info.isOpen ? (
+                  <RestaurantCardOpen {...restaurant} />
+                ) : (
+                  <RestaurantCard {...restaurant} />
+                )}
               </Link>
             );
           })
