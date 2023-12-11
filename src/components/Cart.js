@@ -6,7 +6,7 @@ import { clearCart } from "../cartSlice";
 const Cart = () => {
   const items = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
-  //   console.log("store contains" + items);
+  // console.log("store contains" + items);
   return (
     <div className="m-5 text-2xl font-bold">
       <h1>
