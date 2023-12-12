@@ -1,26 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { cloudinaryImageURL } from "../utils/config";
 import useRestaurantDetails from "../utils/customHooks/useRestaurantDetails";
-import { useDispatch } from "react-redux";
-import { addItem } from "../cartSlice";
 import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantDetails = () => {
   let { id } = useParams();
-  const dispatch = useDispatch();
-
   let restaurantDetails = {};
   let restaurantMenu = [];
+  // lifting state up from RestaurantCategory
+  const [showItems, setShowItems] = useState(null);
+
   let json = useRestaurantDetails(id);
   // console.log(json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
   restaurantDetails = json?.data?.cards[0]?.card?.card?.info;
-  // restaurantMenu =
-  //   json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards?.map(
-  //     (item) => {
-  //       return item.card.info;
-  //     }
-  //   );
   restaurantMenu =
     json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter(
       (category) => {
@@ -30,7 +23,6 @@ const RestaurantDetails = () => {
         );
       }
     );
-  // console.log(restaurantMenu);
 
   return (
     <div className="restaurantDetailsContainer flex flex-wrap m-5">
@@ -67,6 +59,10 @@ const RestaurantDetails = () => {
             <RestaurantCategory
               key={category.card.card.title}
               category={category.card.card}
+              showItems={index === showItems}
+              setShowItems={() => {
+                showItems == index ? setShowItems(null) : setShowItems(index);
+              }}
             />
           ))}
         </div>

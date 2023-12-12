@@ -52,6 +52,7 @@ const Body = () => {
   ) : (
     <div className="body">
       <div className="featuresContainer flex flex-wrap flex-col sm:flex-row justify-between p-2 m-2">
+        {/* search options */}
         <div className="searchFeature p-1 text-lg">
           <input
             className="hover:bg-orange-50 focus:outline-none focus:bg-orange-50 shadow-md border p-2 rounded-lg"
@@ -65,7 +66,6 @@ const Body = () => {
               setSearchText(e.target.value);
             }}
           />
-
           <button
             className="ml-2 hover:bg-orange-50 shadow-md py-2 px-5 rounded-lg"
             onClick={() => {
@@ -88,7 +88,7 @@ const Body = () => {
             {filteredRestaurants.length} Restaurant(s){" "}
           </span>
         </div>
-
+        {/* filter buttons */}
         <div className="filterFeature flex flex-wrap p-2 justify-between">
           <button
             className="px-3 py-1 hover:bg-orange-50 m-2 rounded-lg shadow-md"
@@ -145,6 +145,7 @@ const Body = () => {
         </div>
       </div>
 
+      {/* all restaurant cards */}
       <div className="restaurantsContainer flex flex-wrap justify-center px-5">
         {filteredRestaurants?.length === 0 ? (
           <Shimmer />

@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import RestaurantItemsList from "./RestaurantItemsList";
 
-const RestaurantCategory = ({ category }) => {
+const RestaurantCategory = ({ category, showItems, setShowItems }) => {
   // console.log(category);
-  const [showItems, setShowItems] = useState(false);
+  // const [showItems, setShowItems] = useState(false);
   return (
     <div className="p-2 m-1 justify-between">
       <div
         className="flex justify-between bg-gray-100"
         onClick={() => {
-          setShowItems(!showItems);
+          setShowItems();
         }}
       >
         <span>
