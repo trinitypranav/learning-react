@@ -68,8 +68,8 @@ const appRouter = createBrowserRouter(
         },
       ],
     },
-  ]
-  // { basename: "/learning-react" }
+  ],
+  { basename: "/learning-react" }
 );
 
 const container = document.getElementById("root");
