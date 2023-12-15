@@ -12,7 +12,7 @@ const RestaurantCard = (props) => {
     sla,
   } = props.info;
   return (
-    <div className="restaurant-card w-60 h-auto mx-5 my-1 rounded-lg shadow-lg border p-3">
+    <div data-testid="card" className="restaurant-card w-60 h-auto mx-5 my-1 rounded-lg shadow-lg border p-3">
       <img
         className="cardImage w-full h-60 rounded-lg"
         src={cloudinaryImageURL + cloudinaryImageId}

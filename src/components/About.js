@@ -26,7 +26,7 @@ const About = () => {
   };
 
   return (
-    <div className="about-us" style={containerStyle}>
+    <div data-testid="about" className="about-us" style={containerStyle}>
       <h2 style={headingStyle}>About Me</h2>
       <p style={paragraphStyle}>
         Hey <span style={{ fontSize: "50px" }}>&#128075;</span>, Welcome to Eat

@@ -8,7 +8,10 @@ const CartItem = (props) => {
   // console.log(props);
   const { id, name, imageId, price, defaultPrice } = props;
   return (
-    <div className="flex restaurant-card w-1/3 m-5 rounded-lg shadow-lg border p-3">
+    <div
+      data-testid="cartItem"
+      className="flex restaurant-card w-1/3 m-5 rounded-lg shadow-lg border p-3"
+    >
       <img
         className="cardImage w-32 h-32 rounded-lg"
         src={cloudinaryImageURL + imageId}

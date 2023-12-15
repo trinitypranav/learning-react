@@ -7,7 +7,11 @@ const RestaurantItemsList = ({ items }) => {
   // console.log(items);
   const dispatch = useDispatch();
   return items.map((item) => (
-    <div key={item.card.info.id} className="flex mx-4 border-b-2 self-center">
+    <div
+      data-testid="menuItem"
+      key={item.card.info.id}
+      className="flex mx-4 border-b-2 self-center"
+    >
       <div className="w-2/12 p-2">
         <button
           className="bg-green-600 absolute w-6 h-6 rounded-lg"

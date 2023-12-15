@@ -50,7 +50,7 @@ const Body = () => {
   return !useOnlineStatus() ? (
     <OfflinePage />
   ) : (
-    <div className="body">
+    <div data-testid="body" className="body">
       <div className="featuresContainer flex flex-wrap flex-col sm:flex-row justify-between p-2 m-2">
         {/* search options */}
         <div className="searchFeature p-1 text-lg">
@@ -116,7 +116,7 @@ const Body = () => {
                 return;
               }
               const filtered = allRestaurants.filter((restaurant) => {
-                console.log(restaurant.info);
+                // console.log(restaurant.info);
                 return restaurant.info.totalRatingsString === "10K+";
               });
               setIsFilterOn(true);

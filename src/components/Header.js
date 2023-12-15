@@ -47,7 +47,8 @@ const Header = () => {
         </li>
         <li className="px-3 py-1 mx-2 shadow-md text-lg hover:bg-orange-50 rounded-lg ">
           <Link to={"/cart"}>
-            Cart <span className="text-orange-400">{cartCount}</span>
+            Cart{" "}
+            <span className="text-orange-400">{cartCount + " item(s)"} </span>
           </Link>
         </li>
         {isLoggedIn ? (

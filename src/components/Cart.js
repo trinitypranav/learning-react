@@ -22,7 +22,9 @@ const Cart = () => {
       </h1>
       <div className="flex flex-wrap justify-evenly">
         {items.length !== 0 &&
-          items.map((item) => <CartItem key={item.id} {...item} />)}
+          items.map((item) => (
+            <CartItem key={item.id} {...item} />
+          ))}
       </div>
     </div>
   );

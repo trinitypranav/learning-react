@@ -11,15 +11,12 @@ import RestaurantDetails from "./components/RestaurantDetails";
 import Shimmer from "./components/Shimmer";
 import store from "./store";
 import Cart from "./components/Cart";
-// import About from "./components/About";
-// import Contact from "./components/Contact";
 
 // Lazy Loading, Code Splitting, Chunking of About and Contact
 const About = lazy(() => import("./components/About")); // returning import() is important here
 const Contact = lazy(() => import("./components/Contact"));
 
 const App = () => {
-  //className="box-content m-0 p-0 font"
   return (
     <div className="box-content m-0 p-0">
       <Provider store={store}>
@@ -68,8 +65,8 @@ const appRouter = createBrowserRouter(
         },
       ],
     },
-  ],
-  { basename: "/learning-react" }
+  ]
+  // { basename: "/learning-react" }
 );
 
 const container = document.getElementById("root");
