@@ -20,8 +20,11 @@ const Body = () => {
 
   async function getAllRestaurants() {
     try {
+      // console.log(getAllRestaurantsURL);
       let data = await fetch(getAllRestaurantsURL);
       let jsonData = await data.json();
+      // console.log(JSON.parse(jsonData.contents));
+      jsonData = JSON.parse(jsonData.contents);
       // console.log(
       //   jsonData?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle
       //     ?.restaurants
@@ -30,6 +33,7 @@ const Body = () => {
         jsonData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants == undefined
       ) {
+        console.log("using dummy restaurant data");
         setAllRestaurants(allDummyRestaurants);
         setFilteredRestaurants(allDummyRestaurants);
         return;
