@@ -36,7 +36,7 @@ const RestaurantCard = (props) => {
   );
 };
 
-// Higher Order Component
+// Higher Order Component - takes a component as input, retuns new component with more features
 export const addOpenLabel = (RestaurantCard) => {
   return (props) => {
     return (

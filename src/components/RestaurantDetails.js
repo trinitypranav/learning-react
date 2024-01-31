@@ -23,51 +23,54 @@ const RestaurantDetails = () => {
         );
       }
     );
-
+  console.log("inside restaurantDetails", restaurantDetails);
   return (
-    <div className="restaurantDetailsContainer flex flex-wrap m-5">
-      <div className="restaurantInfo p-5 w-4/12">
-        <h1 className="text-xl font-bold">
-          {restaurantDetails?.name}{" "}
-          <span className="text-green-600 text-lg ml-2">
+    restaurantDetails && (
+      <div className="restaurantDetailsContainer flex flex-wrap m-5">
+        <div className="restaurantInfo p-5 w-4/12">
+          <h1 className="text-xl font-bold">
+            {restaurantDetails?.name}{" "}
+            <span className="text-green-600 text-lg ml-2">
+              {" "}
+              &#9733;{restaurantDetails?.avgRating} (
+              {restaurantDetails?.totalRatingsString})
+            </span>
+          </h1>
+          <img
+            className="restaurantImage my-5 rounded-lg w-52"
+            src={cloudinaryImageURL + restaurantDetails?.cloudinaryImageId}
+          />
+          <h2 className="text-lg font-bold">
+            Area: {restaurantDetails?.areaName}, Locality :{" "}
+            {restaurantDetails?.locality}
+          </h2>
+          <span>Cuisines: {restaurantDetails?.cuisines?.join(", ")}</span>{" "}
+          <br />
+          <span> {restaurantDetails?.costForTwoMessage}</span> <br />
+          <span className="italic text-sm">
             {" "}
-            &#9733;{restaurantDetails?.avgRating} (
-            {restaurantDetails?.totalRatingsString})
-          </span>
-        </h1>
-        <img
-          className="restaurantImage my-5 rounded-lg w-52"
-          src={cloudinaryImageURL + restaurantDetails?.cloudinaryImageId}
-        />
-        <h2 className="text-lg font-bold">
-          Area: {restaurantDetails?.areaName}, Locality :{" "}
-          {restaurantDetails?.locality}
-        </h2>
-        <span>Cuisines: {restaurantDetails?.cuisines?.join(", ")}</span> <br />
-        <span> {restaurantDetails?.costForTwoMessage}</span> <br />
-        <span className="italic text-sm">
-          {" "}
-          {restaurantDetails?.feeDetails?.message}
-        </span>{" "}
-        <br />
-      </div>
-      {/* Menu */}
-      <div className="restaurantMenu ml-5 w-7/12">
-        <h1 className="text-xl font-bold my-5">Menu</h1>
-        <div className="list-disc">
-          {restaurantMenu?.map((category, index) => (
-            <RestaurantCategory
-              key={category.card.card.title}
-              category={category.card.card}
-              showItems={index === showItems}
-              setShowItems={() => {
-                showItems == index ? setShowItems(null) : setShowItems(index);
-              }}
-            />
-          ))}
+            {restaurantDetails?.feeDetails?.message}
+          </span>{" "}
+          <br />
+        </div>
+        {/* Menu */}
+        <div className="restaurantMenu ml-5 w-7/12">
+          <h1 className="text-xl font-bold my-5">Menu</h1>
+          <div className="list-disc">
+            {restaurantMenu?.map((category, index) => (
+              <RestaurantCategory
+                key={category.card.card.title}
+                category={category.card.card}
+                showItems={index === showItems}
+                setShowItems={() => {
+                  showItems == index ? setShowItems(null) : setShowItems(index);
+                }}
+              />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    )
   );
 };
 

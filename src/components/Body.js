@@ -23,14 +23,14 @@ const Body = () => {
       // console.log(getAllRestaurantsURL);
       let data = await fetch(getAllRestaurantsURL);
       let jsonData = await data.json();
-      // console.log(JSON.parse(jsonData.contents));
-      jsonData = JSON.parse(jsonData.contents);
+      console.log(jsonData);
+      // jsonData = JSON.parse(jsonData);
       // console.log(
       //   jsonData?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle
       //     ?.restaurants
       // );
       if (
-        jsonData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+        jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants == undefined
       ) {
         console.log("using dummy restaurant data");
@@ -39,11 +39,11 @@ const Body = () => {
         return;
       }
       setAllRestaurants(
-        jsonData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+        jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       );
       setFilteredRestaurants(
-        jsonData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+        jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       );
     } catch (e) {
