@@ -370,10 +370,6 @@ img, video {
   display: flex;
 }
 
-.contents {
-  display: contents;
-}
-
 .h-10 {
   height: 2.5rem;
 }
