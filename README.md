@@ -1,18 +1,20 @@
-// app layout component
-// header
-// - logo
-// - navList - About, Contact, Cart
-// body
-// - search
-// - restaurantsContainer
-// - restaurantCard (many)
-// - Image
-// - Name
-// - Cuisines
-// - Rating
-// footer
+# 🍔 A food delivery project developed while learning React, Redux Toolkit, Tailwind CSS and Parcel bundler.
 
-Parcel
+- app layout component
+- - header
+- - logo
+- - navList - About, Contact, Cart
+- body
+- - search
+- - restaurantsContainer
+- - restaurantCard (many)
+- - Image
+- - Name
+- - Cuisines
+- - Rating
+- footer
+
+## Parcel Advantages
 
 - Dev Build
 - Local server
