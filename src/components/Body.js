@@ -20,7 +20,6 @@ const Body = () => {
 
   async function getAllRestaurants() {
     try {
-      // console.log(getAllRestaurantsURL);
       let data = await fetch(getAllRestaurantsURL);
       let jsonData = await data.json();
       console.log(jsonData);
