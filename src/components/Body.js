@@ -22,7 +22,6 @@ const Body = () => {
     try {
       let data = await fetch(getAllRestaurantsURL);
       let jsonData = await data.json();
-      console.log(jsonData);
       // jsonData = JSON.parse(jsonData);
       // console.log(
       //   jsonData?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle
